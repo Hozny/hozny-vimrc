@@ -1,5 +1,5 @@
 # hozny-vimrc
-My current vim setup and will update the repository to reflect any changes. 
+My current vim setup.
 ![example](example.jpeg)
 # Setup
 I currently use `nvim` with `plug`. 
