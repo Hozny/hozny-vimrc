@@ -21,6 +21,7 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
 Plug 'leafgarland/typescript-vim'
+Plug 'https://github.com/octol/vim-cpp-enhanced-highlight.git'
 call plug#end()
 
 colorscheme gruvbox
@@ -39,6 +40,7 @@ let g:netrw_winsize = 25
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_use_caching = 0
 
+inoremap kj <Esc>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<R>
@@ -50,3 +52,6 @@ nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR> 
 
+map <leader>ff :<C-U>!g++ -o -Wall -Wextra %:r.cpp -o %:r<CR>
+map <F9> :<C-U>!%:r<CR>
+noremap <Leader>yy ggvG"*y
