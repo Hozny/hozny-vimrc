@@ -5,7 +5,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nu
-set nowrap 
+set nowrap
 set smartcase
 set noswapfile
 set nobackup
@@ -22,6 +22,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
 Plug 'leafgarland/typescript-vim'
 Plug 'https://github.com/octol/vim-cpp-enhanced-highlight.git'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -50,7 +52,10 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>stl :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
-nnoremap <silent> <Leader>- :vertical resize -5<CR> 
+nnoremap <silent> <Leader>- :vertical resize -5<CR>
+nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
+nnoremap <Leader>in :e ~/.config/nvim/init.vim<CR>
+
 
 map <leader>ff :<C-U>!g++ -o -Wall -Wextra %:r.cpp -o %:r<CR>
 map <F9> :<C-U>!%:r<CR>
