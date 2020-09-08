@@ -12,6 +12,7 @@ set nobackup
 set undodir=~./config/nvim/undodir
 set undofile
 set incsearch
+set mouse+=a
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -24,6 +25,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'https://github.com/octol/vim-cpp-enhanced-highlight.git'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+"Requires nodejs and yarn 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
 colorscheme gruvbox
@@ -41,6 +44,10 @@ let g:netrw_winsize = 25
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_use_caching = 0
+" fzf
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS='--reverse'
+
 
 inoremap kj <Esc>
 nnoremap <leader>h :wincmd h<CR>
@@ -55,8 +62,12 @@ nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <Leader>in :e ~/.config/nvim/init.vim<CR>
-
+" remove line numbers
+nnoremap <Leader>nn :set invnumber<CR>
+" fzf binds
+nnoremap <C-p> :GFiles<CR>
+nnoremap <Leader>pf :Files<CR>
 
 map <leader>ff :<C-U>!g++ -o -Wall -Wextra %:r.cpp -o %:r<CR>
 map <F9> :<C-U>!%:r<CR>
-noremap <Leader>yy ggvG"*y
+n
