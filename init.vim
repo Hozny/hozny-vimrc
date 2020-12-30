@@ -48,6 +48,10 @@ let g:ctrlp_use_caching = 0
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
+" genius remap by the primeage (in visual mode, deletes into the void register and pastes what is in your paste register)
+vnoremap <leader>p "_dP
+" same thing but no paste (there is probably a proper way of doing this by default) 
+vnoremap <leader>d "_d
 
 inoremap kj <Esc>
 nnoremap <leader>h :wincmd h<CR>
