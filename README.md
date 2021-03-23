@@ -1,6 +1,6 @@
 # hozny-vimrc
 My current vim setup.
-![example](example.jpeg)
+![example](pic-window-210323-1611-43.png)
 # Setup
 I currently use `nvim` with `plug`. 
 
