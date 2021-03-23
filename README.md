@@ -1,8 +1,10 @@
 # hozny-vimrc
 My current vim setup.
-With onehalf dark theme: 
+
+With onehalf dark theme:            
 ![example](pic-selected-210323-1615-08.png)
-With gruvbox theme:
+
+With gruvbox theme:         
 ![example2](example.jpeg)
 # Setup
 I currently use `nvim` with `plug`. 
