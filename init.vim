@@ -18,7 +18,13 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.config/nvim/plugged')
+"themes
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
+"auto complete coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " c++ extension -> cocInstall coc-clangd 
+" use git in vim
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
 Plug 'leafgarland/typescript-vim'
@@ -27,6 +33,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 "Requires nodejs and yarn 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 colorscheme gruvbox
@@ -54,14 +61,17 @@ vnoremap <leader>p "_dP
 vnoremap <leader>d "_d
 
 inoremap kj <Esc>
+
+nnoremap <leader>ut :UndotreeToggle<CR>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<R>
 nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <leader>u :UndooreeShow<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>stl :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
+nnoremap <leader>qq :q<CR>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
@@ -74,4 +84,7 @@ nnoremap <Leader>pf :Files<CR>
 
 map <leader>ff :<C-U>!g++ -o -Wall -Wextra %:r.cpp -o %:r<CR>
 map <F9> :<C-U>!%:r<CR>
-n
+noremap <Leader>yy ggvG"+y 
+
+source $HOME/.config/nvim/plug-config/coc.vim
+"not sure about this 
